@@ -1,0 +1,122 @@
+﻿@page "/"
+@using Proiect_Medii_Programare.Models;
+@model Proiect_Medii_Programare.Pages.Rezervări.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Rezervări</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<form asp-page="./Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Găsește după Nume Animal/Proprietar:
+            <input type="text" name="SearchString" value="@Model.CurrentFilter" />
+            <input type="submit" value="Search" class="btn btn-primary" /> |
+            <a asp-page="./Index">Listă Completă</a>
+        </p>
+    </div>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <a asp-page="./Index" asp-route-sortOrder="@Model.AnimalSort">
+                @Html.DisplayNameFor(model => model.Rezervare[0].Animal)
+                </a>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rezervare[0].Stăpân)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rezervare[0].Specie.SpecieAnimal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rezervare[0].Cameră.PrețPeNoapte)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rezervare[0].Cameră.TipCameră)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rezervare[0].NrNopți)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rezervare[0].Total)
+            </th>
+            <th>
+                <a asp-page="./Index" asp-route-sortOrder="@Model.DateSort">
+                @Html.DisplayNameFor(model => model.Rezervare[0].Ajunge)
+                </a>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rezervare[0].Pleacă)
+            </th>
+            <th>
+                Servicii
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rezervare[0].Comentarii)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Rezervare)
+        {
+            string selectedRow = "";
+            if (item.ID == Model.RezervareID)
+            {
+                selectedRow = "table-success";
+            }
+            <tr class="@selectedRow">
+            <td>
+                @Html.DisplayFor(modelItem => item.Animal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Stăpân)
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Specie.SpecieAnimal)
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cameră.PrețPeNoapte)
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cameră.TipCameră)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NrNopți)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Total)
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ajunge)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pleacă)
+            </td>
+
+                <td>
+                    @{
+                        foreach (var serviciu in item.RezervăriServicii)
+                        {
+                            @serviciu.Serviciu.ID @: @serviciu.Serviciu.ServiciiSuplimentare <br />
+                        }
+                    }
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comentarii)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

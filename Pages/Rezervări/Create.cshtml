@@ -1,0 +1,96 @@
+﻿
+@page
+@using Proiect_Medii_Programare.Models;
+@model Proiect_Medii_Programare.Pages.Rezervări.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Rezervare</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Rezervare.Animal" class="control-label"></label>
+                <input asp-for="Rezervare.Animal" class="form-control" />
+                <span asp-validation-for="Rezervare.Animal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rezervare.Stăpân" class="control-label"></label>
+                <input asp-for="Rezervare.Stăpân" class="form-control" />
+                <span asp-validation-for="Rezervare.Stăpân" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rezervare.SpecieID" class="control-label">Specie Animal</label>
+                <select asp-for="Rezervare.SpecieID" class="form-control" asp-items="ViewBag.SpecieID">
+                </select>
+                <span asp-validation-for="Rezervare.SpecieID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rezervare.CamerăID" class="control-label">Tipul de Cameră</label>
+                <select asp-for="Rezervare.CamerăID" class="form-control" asp-items="ViewBag.CamerăID">
+                </select>
+                <span asp-validation-for="Rezervare.CamerăID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rezervare.Ajunge" class="control-label"></label>
+                <input asp-for="Rezervare.Ajunge" class="form-control" />
+                <span asp-validation-for="Rezervare.Ajunge" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rezervare.Pleacă" class="control-label"></label>
+                <input asp-for="Rezervare.Pleacă" class="form-control" />
+                <span asp-validation-for="Rezervare.Pleacă" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rezervare.Comentarii" class="control-label"></label>
+                <input asp-for="Rezervare.Comentarii" class="form-control" />
+                <span asp-validation-for="Rezervare.Comentarii" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                 <div class="table">
+                 <table>
+                 <tr>
+                 @{
+                 int cnt = 0;
+                 foreach (var cat in Model.AssignedDataList)
+                 { 
+                 if (cnt++ % 3 == 0)
+                 { 
+                 @:</tr><tr>
+                 } 
+                @:<td>
+                 <input type="checkbox"
+                 name="selectedservicii"
+                value="@cat.ServiciuID"
+                 @(Html.Raw(cat.Assigned ? 
+                "checked=\"checked\"" : "")) />
+                 @cat.ServiciuID @: @cat.Nume
+                 @:</td>
+                 } 
+                 @:</tr>
+                 } 
+                 </table>
+                 </div>
+             </div>
+
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

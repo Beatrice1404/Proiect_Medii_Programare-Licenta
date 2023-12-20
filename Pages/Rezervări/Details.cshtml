@@ -1,0 +1,80 @@
+﻿@page
+@using Proiect_Medii_Programare.Models;
+@model Proiect_Medii_Programare.Pages.Rezervări.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Rezervare</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Rezervare.Animal)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Rezervare.Animal)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Rezervare.Stăpân)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Rezervare.Stăpân)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Rezervare.Specie)
+        </dt>
+        <dd class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Rezervare.Specie.SpecieAnimal)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Rezervare.Cameră.TipCameră)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Rezervare.Cameră.TipCameră)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Rezervare.Cameră.PrețPeNoapte)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Rezervare.Cameră.PrețPeNoapte)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Rezervare.Ajunge)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Rezervare.Ajunge)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Rezervare.Pleacă)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Rezervare.Pleacă)
+        </dd>
+        <dd class="col-sm-10">
+            <ul>
+                @if (Model.Rezervare.RezervăriServicii != null && Model.Rezervare.RezervăriServicii.Any())
+                {
+                    @foreach (var rezervareServiciu in Model.Rezervare.RezervăriServicii)
+                    {
+                        <li>@rezervareServiciu.Serviciu.ServiciiSuplimentare - @rezervareServiciu.Serviciu.PrețServiciu</li>
+                        <!-- Modifică cu numele și alte detalii ale serviciului pe care dorești să le afișezi -->
+                    }
+                }
+            </ul>
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Rezervare.Comentarii)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Rezervare.Comentarii)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Rezervare?.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
