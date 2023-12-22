@@ -16,6 +16,7 @@ builder.Services.AddRazorPages(options =>
 {
     options.Conventions.AuthorizeFolder("/Rezervări");
     options.Conventions.AllowAnonymousToPage("/Rezervări/Index");
+    options.Conventions.AllowAnonymousToPage("/Rezervări/Create");
     options.Conventions.AllowAnonymousToPage("/Rezervări/Details");
     options.Conventions.AuthorizeFolder("/Specii");
     options.Conventions.AllowAnonymousToPage("/Specii/Index");

@@ -12,7 +12,6 @@ using Proiect_Medii_Programare.Models;
 
 namespace Proiect_Medii_Programare.Pages.Rezervări
 {
-    [Authorize(Roles = "Admin")]
 
     public class CreateModel : RezervăriServiciiPageModel
     {

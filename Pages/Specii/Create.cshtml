@@ -5,13 +5,14 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<link rel="stylesheet" href="~/css/CE.css" asp-append-version="true" />
 
 <h4>Specie</h4>
 <hr />
-<div class="row">
-    <div class="col-md-4">
-        <form method="post">
+<div class="main-container">
+    <div class="form-and-icons">
+        <div class="col-md-8">
+        <form method="post" class="booking-form">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Specie.SpecieAnimal" class="control-label"></label>
@@ -22,6 +23,28 @@
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
+        </div>
+        <div class="col-md-4">
+            <div class="margintop">
+                <div class="icon-container">
+                    <div class="icon opening-hours">
+                        <h1>PROGRAM DE FUNCȚIONARE</h1>
+                        <p>Zile lucrătoare: 9:00 dimineața - 5:00 după-amiaza</p>
+                        <p>Weekend: 9:00 dimineața - 12:00 după-amiaza</p>
+                    </div>
+                    <div class="icon opening-hours">
+                        <h1>ORE DE RIDICARE ȘI COLECTARE</h1>
+                        <p>Zile lucrătoare: 9:30 dimineața - 11:00 dimineața și 4:00 după-amiaza - 5:00 după-amiaza</p>
+                        <p>Weekend: 9:30 dimineața - 11:00 dimineața</p>
+                    </div>
+                    <div class="icon opening-hours">
+                        <h1>ADRESA</h1>
+                        <p>Episcop Marton Aron nr 15</p>
+                        <p>La doar 25 de minute de centru</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
