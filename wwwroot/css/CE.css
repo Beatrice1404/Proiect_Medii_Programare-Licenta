@@ -90,3 +90,10 @@ form.booking-form {
     margin: 50px auto 20px auto;
 }
 
+.icon-container .icon h1 {
+    color: rgb(107, 27, 0); /* Roz pastelat */
+}
+
+.icon-container .icon p {
+    color: rgb(107, 27, 0); /* Maro */
+}
