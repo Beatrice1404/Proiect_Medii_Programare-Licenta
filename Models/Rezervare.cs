@@ -51,6 +51,7 @@ namespace Proiect_Medii_Programare.Models
         public int? CamerăID { get; set; }
         public Cameră? Cameră { get; set; }
         public int? SpecieID { get; set; }
+        
         public Specie? Specie { get; set; }
         public ICollection<RezervăriServicii>? RezervăriServicii { get; set; }
 

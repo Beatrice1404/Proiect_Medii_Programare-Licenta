@@ -21,63 +21,57 @@ namespace Proiect_Medii_Programare.Pages.Camere
         {
             _context = context;
         }
-        [BindProperty]
-        public Cameră Cameră { get; set; }
+        public Cameră Cameră { get; set; } = default!;
 
-        [BindProperty]
-        public Rezervare Rezervare { get; set; }
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null)
+            if (id == null || _context.Cameră == null)
             {
                 return NotFound();
             }
-            //se va include Author conform cu sarcina de la lab 2
-            Rezervare = await _context.Rezervare
-            .Include(b => b.Cameră)
-            .Include(b => b.RezervăriServicii).ThenInclude(b => b.Serviciu)
-            .AsNoTracking()
-            .FirstOrDefaultAsync(m => m.ID == id);
-            if (Rezervare == null)
-            {
-                return NotFound();
-            }
-            //apelam PopulateAssignedCategoryData pentru o obtine informatiile necesare checkbox-
-            //urilor folosind clasa AssignedCategoryData 
-            PopulateAssignedData(_context, Rezervare);
 
-            ViewData["CamerăID"] = new SelectList(_context.Cameră, "ID",
-           "TipCameră");
+            var cameră = await _context.Cameră.FirstOrDefaultAsync(m => m.ID == id);
+            if (cameră == null)
+            {
+                return NotFound();
+            }
+            Cameră = cameră;
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync(int? id, string[] selectedserviciu)
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see https://aka.ms/RazorPagesCRUD.
+        public async Task<IActionResult> OnPostAsync()
         {
-            if (id == null)
+            if (!ModelState.IsValid)
             {
-                return NotFound();
+                return Page();
             }
 
-            var rezervareToUpdate = await _context.Rezervare
-                .Include(i => i.RezervăriServicii)
-                .ThenInclude(i => i.Serviciu)
-                .FirstOrDefaultAsync(s => s.ID == id);
+            _context.Attach(Cameră).State = EntityState.Modified;
 
-            if (rezervareToUpdate == null)
+            try
             {
-                return NotFound();
-            }
-
-            if (await TryUpdateModelAsync<Rezervare>(rezervareToUpdate))
-            {
-                UpdateRezervariServicii(_context, selectedserviciu, rezervareToUpdate);
                 await _context.SaveChangesAsync();
-                return RedirectToPage("./Index");
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!CamerăExists(Cameră.ID))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
             }
 
-            UpdateRezervariServicii(_context, selectedserviciu, rezervareToUpdate);
-            PopulateAssignedData(_context, rezervareToUpdate);
-            return Page();
+            return RedirectToPage("./Index");
+        }
+
+        private bool CamerăExists(int id)
+        {
+            return (_context.Specie?.Any(e => e.ID == id)).GetValueOrDefault();
         }
 
     }

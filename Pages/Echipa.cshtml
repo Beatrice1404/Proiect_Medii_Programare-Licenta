@@ -1,0 +1,151 @@
+﻿@page
+@model Proiect_Medii_Programare.Pages.EchipaModel
+@{
+}
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        
+        /* Stiluri pentru structura generală a paginii */
+      
+
+        /* Stiluri pentru containerul principal al echipei */
+        .image-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            margin-top: 50px;
+            padding: 20px;
+        }
+
+            .image-container img {
+                max-width: 50%;
+                height: auto;
+            }
+
+        .text-container {
+            max-width: 40%;
+            margin-left: 30px;
+            text-align: justify;
+        }
+
+        .team-title {
+            font-size: 60px;
+            font-weight: bold;
+            color: pink;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        /* Stiluri pentru descrierea echipei */
+        .team-member {
+            font-size: 50px;
+            font-weight: bold;
+            color: rgb(107, 27, 0);
+        }
+
+        .description {
+            font-size: 18px;
+            color: rgb(107, 27, 0);
+            margin-top: 20px;
+        }
+
+        /* Stiluri pentru lista de imagini mici */
+        .smallImg {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 50px;
+        }
+
+        .imageItem {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            font-weight: bold;
+            font-size: 25px;
+            color: rgb(107, 27, 0);
+            width: 200px;
+        }
+
+            .imageItem img {
+                width: 100%;
+                height: 300px;
+                margin-bottom: 10px;
+            }
+
+        .emoji-item h1 {
+            color:pink;
+        }
+
+        .emoji-item p {
+            color: rgb(107, 27, 0);
+        }
+
+    </style>
+</head>
+<h1 class="team-title">ECHIPA NOASTRĂ</h1>
+
+<div class="image-container">
+    <img src="https://catchdogtrainers.com/wp-content/uploads/2014/07/iStock_000034393042Small.jpg" alt="Imaginea echipei">
+    <div class="text-container">
+        <p class="team-member">Lazar Beatrice</p>
+        <div class="emoji">
+            <div class="emoji-item">
+                <h1>Îngrijirea câinilor</h1>
+                <p>Menținându-ți ochiul pe minge</p>
+            </div>
+            <div class="emoji-item">
+                <h1>Antrenament</h1>
+                <p>Angajare dramatică pe web</p>
+            </div>
+            <div class="emoji-item">
+                <h1>Prim Ajutor</h1>
+                <p>Comerț electronic proactiv prin proces</p>
+            </div>
+        </div>
+        <p class="description">
+            Beatrice este din Cluj-Napoca și are grijă de cățelușii noștri.
+            A crescut cu hamesteri, pești și pisici. În timpul liber, îi place să citească, să exploreze și să 
+            că fotografii.
+        </p>
+    </div>
+</div>
+
+<div class="image-container">
+    <img src="https://media.istockphoto.com/photos/man-feeding-cat-treat-picture-id183060062?k=6&m=183060062&s=612x612&w=0&h=VCU5aCq0LJLjPkBSrV--0Hx6tR6wZ-AaFWKmvMCiy_0=" alt="Imaginea echipei">
+    <div class="text-container">
+        <p class="team-member">Rares Mihasca</p>
+        <div class="emoji">
+            <div class="emoji-item">
+                <h1>Îngrijirea pisicilor</h1>
+                <p>Menținându-ți ochiul pe minge</p>
+            </div>
+            <div class="emoji-item">
+                <h1>Nutriție</h1>
+                <p>Angajare dramatică pe web</p>
+            </div>
+            <div class="emoji-item">
+                <h1>Prim Ajutor</h1>
+                <p>Comerț electronic proactiv</p>
+            </div>
+        </div>
+        <p class="description">Rares este specialistul nostru medical intuitiv și comportamentalist. Lucrând cu componentele emoționale și fiziologice, el lucrează pentru a schimba comportamentul și sănătatea pisicilor prin abordare holistică.</p>
+    </div>
+</div>
+
+<div class="smallImg">
+    <div class="imageItem">
+        <img src="https://th.bing.com/th/id/OIP.LVf_H2BrYW5Nfr_vSIBWuwHaLL?w=596&h=900&rs=1&pid=ImgDetMain">
+        <p>Instructor de animale</p>
+    </div>
+    <div class="imageItem">
+        <img src="https://th.bing.com/th/id/R.73f5147ab3273fed57b9a746807600bf?rik=7r2Y41R7xAzMEA&riu=http%3a%2f%2fcaseta.ro%2fblog%2fwp-content%2fuploads%2fIMG_9645.jpg&ehk=%2fCcwq4zmMlurMYCyX%2bwYLhRO2dykPA7Fi6%2brNbIwLjw%3d&risl=&pid=ImgRaw&r=0">
+        <p>Asistent</p>
+    </div>
+    <div class="imageItem">
+        <img src="https://i.pinimg.com/originals/43/dc/da/43dcdae374bccd3b7f4bc02524dd765b.jpg">
+        <p>Fondator</p>
+    </div>
+</div>

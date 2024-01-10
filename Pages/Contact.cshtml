@@ -1,0 +1,99 @@
+﻿@page
+@model Proiect_Medii_Programare.Pages.ContactModel
+@{
+}
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .contact-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        .image-container {
+            flex: 5;
+            border: 5px solid rgb(107, 27, 0);
+            border-radius: 10px;
+            margin-right: 40px; /* Măresc spațiul între imagine și hartă */
+            padding: 20px; /* Adaug puțin padding pentru a îmbunătăți aspectul */
+            font-size: 100px;
+        }
+
+        img {
+            max-width: 500px;
+            height: 350px;
+            display: block;
+            margin: 0 auto;
+            border-radius: 10px;
+        }
+
+        .map-container {
+            flex: 2; /* Fac harta mai lată */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        iframe {
+            border-radius: 10px;
+            margin-left: 20px; /* Ajustez spațiul la stânga pentru hartă */
+        }
+
+        h1 {
+            color: rgb(107, 27, 0); /* Fac textul maro */
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        p {
+            color: pink; /* Fac textul roz */
+            font-size: 20px;
+            margin: 0;
+        }
+    </style>
+
+
+</head>
+
+
+<div class="contact-container">
+    <div class="image-container">
+        <div class="container">
+            <img src="https://th.bing.com/th/id/R.269f89b453f5350900a89ff05d773506?rik=GDYE3XF3dDiCpA&pid=ImgRaw&r=0" alt="Imaginea mea">
+            <div class="icon-container">
+                <div class="location">
+                    <div class="text">
+                        <h1>Adresă</h1>
+                        <p>Strada Episcop Marton Aron nr. 15, Cluj-Napoca, România</p>
+                    </div>
+                </div>
+                <div class="phone">
+                    <div class="text">
+                        <h1>Telefon</h1>
+                        <p>0749 495 540</p>
+                    </div>
+                </div>
+                <div class="mail">
+                    <div class="text">
+                        <h1>E-mail</h1>
+                        <p>pethotel@yahoo.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2733.964158869314!2d23.583417576268577!3d46.74588887112384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47490ddb31f8e6d7%3A0x5541ad28fd1060b9!2sStr.%20Episcop%20M%C3%A1rton%20%C3%81ron%2015%2C%20Cluj-Napoca%20400347!5e0!3m2!1sen!2sro!4v1696423251867!5m2!1sen!2sro" width="1000" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</div>
+
+    
+
+
+
+
+
+

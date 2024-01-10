@@ -1,0 +1,310 @@
+﻿@page
+@model Proiect_Medii_Programare.Pages.PrețuriModel
+@{
+}
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .title {
+            margin-top: 150px;
+            text-align: center;
+            color: pink;
+            font-weight: bold;
+            font-size: 50px;
+        }
+
+        .button-container {
+            margin-top: 150px;
+        }
+
+        .round-button {
+            width: 200px;
+            height: 100px;
+            border-radius: 30%;
+            background-color: pink;
+            color: rgb(107, 27, 0);
+            font-size: 30px;
+            border: none;
+            margin: 0 10px;
+            transition: background-color 0.3s;
+        }
+
+            .round-button:hover,
+            .round-button:active,
+            .round-button:focus {
+                background-color: #FF66B2;
+                outline: none;
+            }
+
+            .round-button:active {
+                transform: scale(0.95);
+            }
+
+        .emoticons {
+            display: flex;
+            margin-top: 50px;
+            font-size: 50px;
+            color: pink;
+        }
+
+        #star {
+            margin-left: 350px;
+        }
+
+        #house {
+            margin-left: 150px;
+        }
+
+        .emojiContainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background-color: #f7f7f7;
+            padding: 20px;
+            border: 2px solid rgb(107, 27, 0);
+            border-radius: 10px;
+            width: 800px;
+            margin-right: 50px;
+        }
+
+        .emoji-offer {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+            
+
+            .emoji-offer p {
+                color: rgb(107, 27, 0);
+                font-weight: bold;
+            }
+
+        .details {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            margin-top: 10px;
+            color: rgb(107, 27, 0);
+        }
+
+        .priceBasic, .pricePremium {
+            font-size: 24px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            order: 3;
+        }
+
+        .details p {
+            font-size: 20px;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .packages-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+        }
+
+        .package {
+            background-color: #f7f7f7;
+            border: 2px solid rgb(107, 27, 0);
+            border-radius: 10px;
+            padding: 30px;
+            width: 30%;
+            align-items: center;
+            text-align: center;
+        }
+
+            .package h2 {
+                color: rgb(107, 27, 0);
+                font-weight: bold;
+                font-size: 84px;
+                margin-bottom: 10px;
+            }
+
+            .package p {
+                font-size: 28px;
+                margin: 5px 0;
+                color: rgb(107, 27, 0);
+                margin-bottom: 20px;
+                margin-top: 50px;
+            }
+
+        .house {
+            color: pink;
+            font-size: 70px;
+        }
+
+        .price {
+            font-size: 84px;
+            color: rgb(107, 27, 0);
+            margin-top: 50px;
+            font-weight: bold;
+        }
+
+        .check {
+            font-size: 20px;
+            color: rgb(83, 141, 83);
+        }
+    </style>
+</head>
+
+<h1 class="title">TARIFELE NOASTRE</h1>
+
+<div class="button-container">
+    <button class="round-button" id="dogsButton">CAINI</button>
+    <button class="round-button" id="catsButton">PISICI</button>
+    <button class="round-button" id="smallPetsButton">DIVERSE</button>
+</div>
+
+<div class="emoticons">
+    <div class="emojiContainer" id="petDetails">
+        <div class="emoji-offer">
+            <p>Oferta Basic</p>
+        </div>
+        <div class="details">
+            <p>
+                Prețul se bazează pe colectarea animalului dumneavoastră înainte de ora 11:00,
+                există o taxă pentru preluarea târzie.
+            </p>
+            <p id="petType">Câini</p>
+            
+        </div>
+        <div class="details">
+            <p id="sharedPetsText">DOI CÂINI CARE ÎMPART</p>
+            <p class="priceBasic" id="sharedPetsPrice">$5</p>
+            <p>Prețul se bazează pe doi câini care împart aceeași cușcă pe noapte</p>
+        </div>
+        <div class="details">
+            <p id="onePetPerDayText">1 CÂINE PE ZI</p>
+            <p class="priceBasic" id="onePetPerDayPrice">$36</p>
+           
+        </div>
+        <div class="details">
+            <p id="twoPetsPerDayText">2 CÂINI PE ZI</p>
+            <p class="priceBasic" id="twoPetsPerDayPrice">$36</p>
+            <p>Prețurile pentru petrecerea zilei includ ridicarea și livrarea.</p>
+        </div>
+    </div>
+
+   
+
+    <!-- Ofertă Premium -->
+    <div class="emojiContainer" id="premiumPetDetails">
+        <div class="emoji-offer">
+            <p>Oferta Premium</p>
+        </div>
+        <div class="details" id="overnightStay">
+            <p>Cameră VIP</p>
+            <p class="priceBasic" id="overnightStayPrice">$25</p>
+            <p>Animalele care rămân peste noapte trebuie ridicați până la ora 11:00 a zilei următoare, cu excepția cazului în care s-a aranjat altfel.</p>
+        </div>
+        <div class="details" id="startingDay">
+            <p>SPĂLAT</p>
+            <p class="priceBasic" id="startingDayPrice">+$10</p>
+            <p>SPĂLAT ȘI ARANJAT ANIMALUL INAINTE DE A FI PRELUAT</p>
+        </div>
+        <div class="details" id="webcamRoom">
+            <p>CAMERĂ WEBCAM </p>
+            <p class="priceBasic" id="webcamRoomPrice">+$10</p>
+            <p>CAMERĂ PENTRU A VĂ VEDEA ANIMALUL</p>
+        </div>
+        <div class="details" id="extraWalks">
+            <p>PLIMBAT/JUCAT SUPLIMENTAR (PERIOADE DE 20 DE MINUTE)</p>
+            <p class="priceBasic" id="extraWalksPrice">$5</p>
+            <p>Vă rugăm să ne contactați cu privire la nevoile dumneavoastră.</p>
+        </div>
+    </div>
+    <script>
+        function updateBasicOfferDetails(petType, sharedText, sharedPrice, onePetText, onePetPrice, twoPetsText, twoPetsPrice) {
+            document.getElementById('petType').textContent = petType;
+            document.getElementById('sharedPetsText').textContent = sharedText;
+            document.getElementById('sharedPetsPrice').textContent = sharedPrice;
+            document.getElementById('onePetPerDayText').textContent = onePetText;
+            document.getElementById('onePetPerDayPrice').textContent = onePetPrice;
+            document.getElementById('twoPetsPerDayText').textContent = twoPetsText;
+            document.getElementById('twoPetsPerDayPrice').textContent = twoPetsPrice;
+        }
+
+        function updatePremiumOfferDetails(overnightStay, overnightStayPrice, startingDay, startingDayPrice, webcamRoom, webcamRoomPrice, extraWalks, extraWalksPrice) {
+            document.getElementById('overnightStay').textContent = overnightStay;
+            document.getElementById('overnightStayPrice').textContent = overnightStayPrice;
+            document.getElementById('startingDay').textContent = startingDay;
+            document.getElementById('startingDayPrice').textContent = startingDayPrice;
+            document.getElementById('webcamRoom').textContent = webcamRoom;
+            document.getElementById('webcamRoomPrice').textContent = webcamRoomPrice;
+            document.getElementById('extraWalks').textContent = extraWalks;
+            document.getElementById('extraWalksPrice').textContent = extraWalksPrice;
+        }
+
+        const dogsButton = document.getElementById('dogsButton');
+        const catsButton = document.getElementById('catsButton');
+        const smallPetsButton = document.getElementById('smallPetsButton');
+
+        function handleAnimalTypeSelection(petType, basicOffer, premiumOffer) {
+            updateBasicOfferDetails(...basicOffer);
+            updatePremiumOfferDetails(...premiumOffer);
+        }
+
+        dogsButton.addEventListener('click', () => {
+            handleAnimalTypeSelection(
+                'Câini',
+                ['DOI CÂINI ÎN CAMERĂ', '25% REDUCERE', 'EXTERIOR', '$10', 'STANDARD', '$15'],
+               
+            );
+        });
+
+        catsButton.addEventListener('click', () => {
+            handleAnimalTypeSelection(
+                'Pisici',
+                ['DOUA PISICI ÎN CAMERĂ', '25% REDUCERE', 'STANDARD', '$10'],
+               
+            );
+        });
+
+        smallPetsButton.addEventListener('click', () => {
+            handleAnimalTypeSelection(
+                'Animalele Mici',
+                ['DOUA ANIMALE MICI ÎN CAMERĂ', '25% REDUCERE', 'STANDARD', '$5'],
+               
+            );
+        });
+    </script>
+
+    
+</div>
+<h1 class="title">PACHETELE NOASTRE</h1>
+
+<div class="packages-container">
+    <div class="package">
+        <h2>1 Zi</h2>
+        <p>Cameră VIP </p>
+        <p>Socializare  </p>
+        <p>Periere  </p>
+        <p>Jucării în cameră </p>
+        <div class="price">$50</div>
+    </div>
+    <div class="package">
+        <h2>10 Zile</h2>
+        <p>Cameră simplă  </p>
+        <p>Socializare și exerciții  </p>
+        <p>Mese personalizate</p>
+        <p>Spa și grooming  </p>
+        <div class="price">$350</div>
+    </div>
+    <div class="package">
+        <h2>20 Zile</h2>
+        <p>Cameră simplă  ></p>
+        <p>Exerciții de două ori pe zi  </p>
+        <p>Mese personalizate  </p>
+        <p>Socializare  </p>
+        <div class="price">$550</div>
+    </div>
+</div>
+

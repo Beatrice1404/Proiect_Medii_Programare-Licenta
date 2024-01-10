@@ -1,0 +1,33 @@
+﻿/* Stilurile pentru a formata lista definită (dl) */
+dl {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    list-style: none;
+}
+
+/* Stilurile pentru fiecare element din lista definită */
+dt, dd {
+    flex-basis: calc(50% - 20px);
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: rgb(243, 234, 235);
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Stilurile pentru a formata elementele de tip dt (label) */
+dt {
+    font-weight: bold;
+}
+
+/* Stilurile pentru a formata elementele de tip dd (valoare) */
+dd {
+    margin-left: 0;
+}
+
+body {
+    color: rgb(107, 27, 0)
+}

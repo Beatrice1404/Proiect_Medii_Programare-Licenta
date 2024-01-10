@@ -1,0 +1,73 @@
+﻿@page "/"
+@model Proiect_Medii_Programare.Pages.AcasăModel
+@{
+}
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            margin-top: 100px;
+        }
+
+        .image-section img {
+            max-width: 100%;
+            height: 500px;
+            border-radius: 10px;
+            
+        }
+
+        .text-section {
+            flex: 1;
+            padding: 0 20px;
+            font-weight: bold;
+            font-size: 32px;
+            text-align: center;
+        }
+
+        .holiday-text {
+            color: rgb(107, 27, 0);
+        }
+
+        .book-button {
+            background-color: pink;
+            color: rgb(107, 27, 0);
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 20px;
+            transition: background-color 0.3s ease;
+            height: 60px;
+            width: 180px;
+            margin-top: 20px;
+        }
+
+            .book-button:hover {
+                background-color: rgb(251, 212, 218);
+            }
+    </style>
+
+    </head>
+<div class="content">
+    <div class="text-section">
+        <h1>Bucurați-vă de <br><span class="holiday-text">Vacanță</span></h1>
+        <br>
+        <a asp-area="" asp-page="/Rezervări/Create">
+            <button class="book-button">Rezerva Acum</button>
+        </a>
+    </div>
+    <div class="image-section">
+        <img src="https://www.wallpaperbetter.com/wallpaper/468/441/85/pack-of-dogs-on-a-white-background-2K-wallpaper-middle-size.jpg" alt="Caminul Tau">
+    </div>
+</div>

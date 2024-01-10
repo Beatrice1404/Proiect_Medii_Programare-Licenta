@@ -32,6 +32,18 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Membri/Index">Membri</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/DespreNoi">Despre Noi</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Echipa">Echipa</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Prețuri">Prețuri</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Contact">Contact</a>
+                        </li>
                     </ul>
                     <partial name="_LoginPartial" />
             </div>
@@ -43,14 +55,51 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        
+    <footer class="footer">
+        <div class="mainContainer">
+            <div class="header-container">
+                <h1>Hotel pentru Animale de Companie</h1>
+            </div>
+            <div class="about">
+                <h1>Despre</h1>
+                <div class="info">
+                    <div class="location">
+                        <p>Str. Episcop Marton Aron nr. 15</p>
+                    </div>
+                    <div class="phone">
+                        <p>0749 495 540</p>
+                    </div>
+                    <div class="open">
+                        <p>Luni - Duminică: 8 dimineața - 8 seara</p>
+                    </div>
+                </div>
+            </div>
+            <div class="about">
+                <h1>Rețele Sociale</h1>
+                <div class="info">
+                    <div class="location">
+                        <p>Facebook</p>
+                    </div>
+                    <div class="phone">
+                        <p>Instagram</p>
+                    </div>
+                    <div class="open">
+                        <p>Twitter</p>
+                    </div>
+                </div>
+            </div>
+            <iframe class="about" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2733.964158869314!2d23.583417576268577!3d46.74588887112384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47490ddb31f8e6d7%3A0x5541ad28fd1060b9!2sStr.%20Episcop%20M%C3%A1rton%20%C3%81ron%2015%2C%20Cluj-Napoca%20400347!5e0!3m2!1sen!2sro!4v1696423251867!5m2!1sen!2sro" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
     </footer>
+
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
+       
 </body>
+
 </html>
